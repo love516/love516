@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="keywords" content="杨咩咩&孟居居's爱情时间轴" />
+<meta name="description" content="杨咩咩&孟居居's爱情时间轴！！！ " />
+<title>loveTimeline</title>
+<link href="css/default.css" rel="stylesheet" />
+<link href="css/history.css" rel="stylesheet" />
+<!-- 添加百度统计 -->
+<script src="//qwer.men/assets/plugin/tongji/baidu.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden_dev.js"></script>
+<script type="text/javascript" src="js/functions_dev.js"></script>
+</head>
+<body>
+<!-- 代码 开始 -->
+<div id="mainDiv">
+		<div id="content" style="width: 1110px; height: 625px; margin-top: 57px; margin-left: 165px;">
+			<div id="loveHeart">
+				<canvas id="garden" width="670" height="625"></canvas>
+				<div id="words">
+					<div id="messages">
+						我们在一起已经
+						<div id="elapseClock"><span class="digit">0</span> 年 <span class="digit">0</span> 月 <span class="digit">0</span> 天 <span class="digit">0</span> 时 <span class="digit">0</span> 分 <span class="digit">0</span> 秒</div>
+					</div>
+					<div id="loveu">
+						喜欢爱笑的你，留下美好的回忆!<br> 
+						<div class="signature">——<a href="http://孟烨颖.我爱你" target="_blank">杨咩咩</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var displayMode = 1;
+		var together = new Date();
+		together.setFullYear(2018,4,16);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		$("#loveHeart").click(function(){
+			displayMode *= -1;
+			timeElapse(together, displayMode);
+		});
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				adjustWordsPosition();
+				startHeartAnimation();
+			}, 100);
+
+			timeElapse(together, displayMode);
+			setInterval(function () {
+				timeElapse(together, displayMode);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+<div class="head-warp">
+  <div class="head">
+        <div class="nav-box">
+          <ul>
+              <li class="cur" style="text-align:center; font-size:62px; font-family:'微软雅黑', '宋体';color:#fff">爱情记忆</li>
+          </ul>
+        </div>
+  </div>
+</div>
+<div class="main">
+	<div class="history">
+		<div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>05.16</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								那天.天一.NingBo
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/201903050001.jpg">
+								<p>那天，我们共同作出了一个决定。
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>									
+			</ul>
+
+			<div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>05.20</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								吃.火锅.HangZhou
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/72595c4f616e444d8dd32073d6155b5.jpg">
+								<br /><br />
+                                <img src="photo/24bf9c07304a501f9d6eac1bbbf1af5.jpg">
+								<p>520，我们第一次吃火锅。
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>									
+			</ul>
+	    </div><!-- .history-date --> 
+		<div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>06.09</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								游.海底.HangZhou
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/41c75823677721023df28230705fce9.jpg">
+								<p>我说没去过海洋公园，你就带我去了，记得还是好大一笔门票钱。
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>									
+			</ul>
+	    </div><!-- .history-date --> 
+		<div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>06.12</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								做.饮料.HangZhou
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/5f231230f6db887d629e72c2ce19d4a.jpg">
+								<p>第一次做杨梅汁，说实话味道一般般，但是看到小居居能购喝完，危险开心哦。
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>									
+			</ul>
+	    </div><!-- .history-date --> 
+		<div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>06.15</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								游.石浦.XiangShan
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/85703d063bc796e09fa3f221cba0326.jpg">
+								<p>第一次去石浦，第一次去象山，感觉是一个静谧的小城，去了影视城，看到了电视剧里的场景，然后你还被晒伤了。😭。
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>									
+			</ul>
+	    </div><!-- .history-date --> 
+
+		<div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>07.11</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								聊.微信.HangZhou
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/1484138690349cec748446c8844ae5f.jpg">
+								<p>每次争吵，我都会说你是不是每次都在骗我，但是这张截图我一直保留着，因为我你对我的爱我深信不疑，也希望你对我不要怀疑。有不开心的事大声说出来！PS：图中的洗面奶已于2019年3月14日收到惹。
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>									
+			</ul>
+	    </div><!-- .history-date --> 
+
+			<div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>08.18</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								游.乌镇.JiaXing
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/b1976386362c7a8e8ac18a296676010.jpg">
+								<br /><br />
+                                <img src="photo/cfa6456166be283f573fb9a88b41099.jpg">
+								<p>真正意义上的第一次旅行，记得也是一次说走就走的旅行。虽然乌镇我曾经去过，但是没有和你一起走过，我希望和你一起走遍大江南北，吃遍大江东西。
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>									
+			</ul>
+	    </div><!-- .history-date --> 
+
+			<div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>08.18</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								看.动物.HangZhou
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/a5fb61dcf88be1e0be2e80cb50bc692.jpg">
+
+								<p>第一次和你去动物园，也是我人生中第一次到动物园，虽然动物们电视里见过不少，但是今天可是见到活的了，印象最深的是1.蛇真的很刺激2.那天你累累的
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>									
+			</ul>
+	    </div><!-- .history-date --> 
+		<div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>09.11</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								画.咩咩.NingBo
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/bba2b1610c314bb0f54c09595898cd6.jpg">
+
+								<p>小居居给我画的头像，危险漂酿！
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>									
+			</ul>
+	    </div><!-- .history-date --> 
+	    <div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>10.1</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								行.故宫.BeiJing
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/20190305113951.jpg">
+								<p>第一次踏上只有我们两个人的跨省旅行！
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>					
+			</ul>
+ </div><!-- .history-date --> 
+	    <div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>11.02</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								游.迪斯尼.ShangHai
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/201803050003.jpg">
+								<br /><br />
+								<img src="photo/201903050002.jpg">
+
+								<p>第一次和你一起玩以前我从来不敢玩的过山车！！！
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>					
+			</ul>
+	    </div><!-- .history-date -->
+	    <div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>11.17 双十</h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								日.生日.Hangzhou
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/birthday.jpg">
+								<p>第一次有人为我庆祝生日，虽然那天下雨，但是你还是和我一起去全家买蛋糕。那天我许的愿望是希望你每天都能开开心心的。哎呀，说出来了。
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>					
+			</ul>
+	    </div><!-- .history-date -->
+
+
+        <div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>12.01 </h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								游.石浦.NingBo
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/bc83c7b1b0c12a03846daf52e380d65.jpg">
+								<p>第二次去石浦，第二次去象山，静谧的感觉仍在。
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>					
+			</ul>
+	    </div><!-- .history-date -->
+        <div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>12.09 </h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								雪.大雪.Hangzhou
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/c5b94e9ae81d3f0bd1524c7db0bd98b.jpg">
+                                <br /><br />
+								<img src="photo/14f44d98152e96837519bfb0e65f6d2.jpg">
+								<p>新年第一场雪，也是我们在一起的第一个冬天。你说你想来杭州看雪，第一年就实现了你的小愿望。雪后的西湖分外漂亮。
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>					
+			</ul>
+	    </div><!-- .history-date -->
+
+  <div class="history-date">
+	      	<ul>
+				<h2 class="first"><a href="#nogo">2018年</a></h2>
+				<li class="green">
+					<h3>12.31 </h3>
+					<dl>
+						<dt>
+							<div class="feed_arrow">
+							</div>		
+							<h4>
+								跨.新年.Hangzhou
+							</h4>	
+							<div class="wrap">	
+								<img src="photo/77088045076b9cc8f6bc3b5c2da3603.jpg"> 
+								<p>跨年啦！！！！！！！！！！！！！！！！！！！！！2019越来越好。
+								</p>
+							</div>									 
+						</dt>
+					</dl>
+				</li>					
+			</ul>
+	    </div><!-- .history-date -->
+
+
+<script src="js/jquery.js"></script> 
+<script src="js/main.js"></script>
+<!-- 代码 结束 -->
+<div id="copyright">
+	&copy; 2018-2019 <a href="http://www.yangleiting.com" target="_blank">杨咩咩❤孟居居</a>
+	<a class="github" href="https://github.com/ylt1992/loveTimeline" target="_blank" title="Fork me on GitHub"> <img width="20" height="20" align="Fork me on GitHub" src="images/auth-github.png" /></a>
+ 	<a class="weibo" href="http://weibo.com/khylt" target="_blank" title="weibo"> <img width="20" height="20" align="weibo" src="images/auth-weibo.png" /></a>
+  	<a class="alipay" href='http://yanglkeiting.com/mywallet/' target="_blank" title="alipay"> <img width="80" height="19" alt="alipay" src='images/btn-index.png' /></a>	
+</div>
+</body>
+</html>
