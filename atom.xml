@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>咩❤居</title>
+  <title>咩❤居の站</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-05-31T05:58:20.420Z</updated>
+  <updated>2019-08-23T02:51:27.649Z</updated>
   <id>/</id>
   
   <author>
@@ -17,46 +17,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2019/05/31/hello-world/"/>
-    <id>/2019/05/31/hello-world/</id>
-    <published>2019-05-31T05:58:20.420Z</published>
-    <updated>2019-05-31T05:58:20.420Z</updated>
+    <title>我们の足迹</title>
+    <link href="/2018/08/18/hello-world/"/>
+    <id>/2018/08/18/hello-world/</id>
+    <published>2018-08-18T14:16:01.000Z</published>
+    <updated>2019-08-23T02:51:27.649Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
+      我们の足迹
     
     </summary>
     
+      <category term="旅行" scheme="/categories/%E6%97%85%E8%A1%8C/"/>
+    
+    
+      <category term="旅游" scheme="/tags/%E6%97%85%E6%B8%B8/"/>
+    
+      <category term="玩耍" scheme="/tags/%E7%8E%A9%E8%80%8D/"/>
     
   </entry>
   
   <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-07-03T04:11:20.193Z</updated>
+    <title>第一次旅游——乌镇</title>
+    <link href="/2018/08/18/Hexo-Theme-Sakura/"/>
+    <id>/2018/08/18/Hexo-Theme-Sakura/</id>
+    <published>2018-08-18T14:16:01.000Z</published>
+    <updated>2019-08-23T02:42:07.145Z</updated>
     
     <summary type="html">
     
-      hexo-sakura主题使用教程
+      乌镇算是第一次和juejue旅游惹，虽然咩咩以前来过，但是这又有什么关系捏，不过说实话作为两个南方人，对这种小桥流水人家确实不太感冒哈，照片都懒得拍。
     
     </summary>
     
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="旅行" scheme="/categories/%E6%97%85%E8%A1%8C/"/>
     
     
-      <category term="web" scheme="/tags/web/"/>
+      <category term="旅游" scheme="/tags/%E6%97%85%E6%B8%B8/"/>
     
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="玩耍" scheme="/tags/%E7%8E%A9%E8%80%8D/"/>
     
   </entry>
   
