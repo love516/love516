@@ -361,105 +361,151 @@
   
   <div id="content" class="site-content">
     <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      <!--
-
-link : http://love516.github.io
-name : miemie
-mail : love516@teckon.cn
-
--->
-
-<html>
-	<head><meta name="generator" content="Hexo 3.8.0">
-                <meta charset="UTF-8">
-
-		<!--引入jQuery框架-->
-		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-		<!--引入jVectorMap库-->
-		<script type="text/javascript" src="js/jquery-jvectormap-1.2.2.min.js"></script>
-		<!--引入样式表-->
-		<link href="js/jquery-jvectormap-1.2.2.css" rel="stylesheet" media="screen">
-
-
-		<!--引入中国地图数据库-->
-		<script type="text/javascript" src="js/jquery-jvectormap-cn-merc-en.js"></script>
-
-		<!--引入美国地图数据库-->
-		<!--script type="text/javascript" src="js/jquery-jvectormap-us-aea.js"></script-->
-		<!--引入世界地图数据库-->
-		<!--script type="text/javascript" src="js/jquery-jvectormap-world-mill.js"></script-->
-
-	</head>
-<body>
-	<!--background-color: 地图背景颜色-->
-	<div id="map" style="background-color:#353535"> </div>
-	<script>
-		$('#map').vectorMap({
-
-			// 此处更改地图
-			map: 'cn_merc_en',   // 中国地图
-			//map: 'us_aea',     // 美国地图
-			//map: 'world_mill', // 世界地图
+      <h1 id="教你用-jVectorMap-制作属于自己的旅行足迹"><a href="#教你用-jVectorMap-制作属于自己的旅行足迹" class="headerlink" title="教你用 jVectorMap 制作属于自己的旅行足迹"></a>教你用 jVectorMap 制作属于自己的旅行足迹</h1><p><img src="http://wx1.sinaimg.cn/large/cf5b72a1ly1fvv1gupvz0j20xx0op760.jpg" alt="我的足迹地图"></p>
+<h2 id="jVectorMap"><a href="#jVectorMap" class="headerlink" title="jVectorMap"></a>jVectorMap</h2><p>JVectorMap 是一个优秀的、兼容性强的 jQuery 地图插件。</p>
+<p>它可以工作在包括 IE6 在内的各款浏览器中，矢量图输出，除官方提供各国地图数据外，用户可以使用数据转换程序定制地图数据。例如街道地图、小区地图等等。</p>
+<p>JVectorMap 官方网站提供了很多相关文档和使用示例，感兴趣的小伙伴可以自己研究一下。</p>
+<p>官方网站：<a href="http://jvectormap.com/" target="_blank" rel="noopener">http://jvectormap.com/</a></p>
+<p><img src="http://wx4.sinaimg.cn/large/cf5b72a1ly1fvv2t7olhjj20ss0e8jvo.jpg" alt="jVectorMap"></p>
+<p>今天教大家通过 jVectorMap 制作旅行足迹地图，最终的效果可以查看下面的 Demo 演示（中国），并教大家如何将制作好的足迹地图嵌入到我们自己的博客中。</p>
+<p>Demo : <a href="http://www.wujiayi.vip/index.php/46.html" target="_blank" rel="noopener">http://www.wujiayi.vip/index.php/46.html</a></p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p><img src="http://wx1.sinaimg.cn/large/cf5b72a1ly1fvv432zeqzj20b806gaaa.jpg" alt></p>
+<ul>
+<li><p>红色框中的文件是必须要引入的内容。</p>
+</li>
+<li><p>绿色框中的文件是展示的地图，可自行到官网下载需要的地图 : <a href="http://jvectormap.com/maps/world/world/" target="_blank" rel="noopener">http://jvectormap.com/maps/world/world/</a>，拷贝到 js 目录。</p>
+</li>
+<li><p>index.html 中需要添加足迹位置和相关样式。</p>
+</li>
+</ul>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p> <code>index.html</code> 分为三部分介绍：</p>
+<ul>
+<li>如何更换不同国家地图。</li>
+</ul>
+<ul>
+<li>如何修改地图颜色等相关样式。</li>
+</ul>
+<ul>
+<li>如何添加足迹位置。</li>
+</ul>
+<h2 id="第一部分：如何更换不同国家地图。"><a href="#第一部分：如何更换不同国家地图。" class="headerlink" title="第一部分：如何更换不同国家地图。"></a>第一部分：如何更换不同国家地图。</h2><pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;!--引入jQuery框架--&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;
+        &lt;!--引入jVectorMap库--&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-jvectormap-1.2.2.min.js&quot;&gt;&lt;/script&gt;
+        &lt;!--引入样式表--&gt;
+        &lt;link href=&quot;js/jquery-jvectormap-1.2.2.css&quot; rel=&quot;stylesheet&quot; media=&quot;screen&quot;&gt;
 
 
-			backgroundColor: 'transparent',
-			zoomMin: 0.9, // 鼠标缩放时的最小比例
-			zoomMax: 3.0, // 鼠标缩放时的最大比例
-			focusOn: {
-				x: 0.55,
-				y: 2,
-				scale: 0.9
-			},
-			regionStyle: {
-				initial: {
-					fill: '#e5e5e5',   // 地图颜色
-					"fill-opacity": 1, // 省份（州）是否隐藏，鼠标滑动时显示; 1：显示，2：隐藏。
-					stroke: 'none',
-					"stroke-width": 0,
-					"stroke-opacity": 1
-				},
-				hover: {
-					fill: '#ccc',  // 鼠标滑动至某省份的高亮颜色。
-					"fill-opacity": 0.8
-				},
-				selected: {
-					fill: 'yellow'
-				},
-				selectedHover: {}
-			},
-			markerStyle: {
-		        initial: {
-		            fill: '#fd8888', // 足迹位置的填充颜色
-		            stroke: '#fff'   // 足迹位置的描边颜色
-		        },
-				hover: {
-					fill: '#fd2020', // 鼠标滑动至足迹位置后的填充颜色
-					stroke: '#fff',  // 鼠标滑动至足迹位置后的描边颜色
-					"fill-opacity": 0.8
-				},
-		    },
-			markers: [ // 足迹位置
+        &lt;!--引入中国地图数据库--&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-jvectormap-cn-merc-en.js&quot;&gt;&lt;/script&gt;
 
-				// {latLng: [经度（保留两位小数）, 纬度（保留两位小数）], name: '城市名称'},
-				// 推荐查询经纬度网站：http://www.gpsspg.com/maps.htm
+        &lt;!--引入美国地图数据库--&gt;
+        &lt;!--script type=&quot;text/javascript&quot; src=&quot;js/jquery-jvectormap-us-aea.js&quot;&gt;&lt;/script--&gt;
+        &lt;!--引入世界地图数据库--&gt;
+        &lt;!--script type=&quot;text/javascript&quot; src=&quot;js/jquery-jvectormap-world-mill.js&quot;&gt;&lt;/script--&gt;
 
-		        {latLng: [29.85, 121.51], name: '宁波-海曙'},
-		        {latLng: [29.19, 121.93], name: '宁波-石浦'},
-            {latLng: [30.27, 120.15], name: '杭州-西湖'},
-						{latLng: [29.58, 119.07], name: '杭州-淳安'},
-          	{latLng: [30.74, 120.48], name: '嘉兴-乌镇'},
-						{latLng: [28.92, 118.88], name: '衢州-柯城'},
-						{latLng: [29.13, 118.38], name: '衢州-开化'},
-						{latLng: [28.73, 118.62], name: '衢州-江山'},
-						{latLng: [31.14, 121.66], name: '上海-迪斯尼'},
-            {latLng: [22.29, 114.17], name: '香港'},
+    &lt;/head&gt;
+&lt;body&gt;
+</code></pre>
+<p>提前下载需要的国家地图，拷贝到 js 目录下。</p>
+<p>在 <code>&lt;head&gt;</code> 标签里引入地图数据： <code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/地图文件名&quot;&gt;&lt;/script&gt;</code></p>
+<p><strong>注意</strong> ：同时只能有一个地图库，注意不要引入多个地图数据。可以选择注释掉其他的，方便更改。</p>
+<h2 id="第二部分：如何修改地图颜色等相关样式。"><a href="#第二部分：如何修改地图颜色等相关样式。" class="headerlink" title="第二部分：如何修改地图颜色等相关样式。"></a>第二部分：如何修改地图颜色等相关样式。</h2><pre><code class="html">    &lt;!--background-color: 地图背景颜色--&gt;
+    &lt;div id=&quot;map&quot; style=&quot;background-color:#353535&quot;&gt; &lt;/div&gt;
+    &lt;script&gt;
+        $(&#39;#map&#39;).vectorMap({
+
+            // 此处更改地图
+            map: &#39;cn_merc_en&#39;,   // 中国地图
+            //map: &#39;us-aea&#39;,     // 美国地图
+            //map: &#39;world-mill&#39;, // 世界地图
 
 
-		        {latLng: [39.91, 116.39], name: '北京-北京'}
-		    ]
-		});
-	</script>
-</body></html>
+            backgroundColor: &#39;transparent&#39;,
+            zoomMin: 0.9, // 鼠标缩放时的最小比例
+            zoomMax: 2.4, // 鼠标缩放时的最大比例
+            focusOn: {
+                x: 0.55,
+                y: 2,
+                scale: 0.9
+            },
+            regionStyle: {
+                initial: {
+                    fill: &#39;#e5e5e5&#39;,   // 地图颜色
+                    &quot;fill-opacity&quot;: 1, // 省份（州）是否隐藏，鼠标滑动时显示; 1：显示，2：隐藏。
+                    stroke: &#39;none&#39;,
+                    &quot;stroke-width&quot;: 0,
+                    &quot;stroke-opacity&quot;: 1
+                },
+                hover: {
+                    fill: &#39;#ccc&#39;,  // 鼠标滑动至某省份的高亮颜色。
+                    &quot;fill-opacity&quot;: 0.8
+                },
+                selected: {
+                    fill: &#39;yellow&#39;
+                },
+                selectedHover: {}
+            },
+            markerStyle: {
+                initial: {
+                    fill: &#39;#fd8888&#39;, // 足迹位置的填充颜色
+                    stroke: &#39;#fff&#39;   // 足迹位置的描边颜色
+                },
+                hover: {
+                    fill: &#39;#fd2020&#39;, // 鼠标滑动至足迹位置后的填充颜色
+                    stroke: &#39;#fff&#39;,  // 鼠标滑动至足迹位置后的描边颜色
+                    &quot;fill-opacity&quot;: 0.8
+                },
+            },
+        });
+    &lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<p>参照代码注释修改颜色和相关样式。</p>
+<p><strong>千万注意</strong> ：在更改地图时 <code>map: &#39;地图名称&#39;</code>  ，地图名称是地图数据文件名的后半部分。</p>
+<p>例如：</p>
+<p>美国地图文件名：jquery-jvectormap-us-aea.js</p>
+<p>那地图的名称是：us-aea</p>
+<p><strong>但是要注意把 <code>-</code> (横杠)更改成 <code>_</code>（下划线）。 否则不会显示地图。</strong></p>
+<h2 id="第三部分：如何添加足迹位置。"><a href="#第三部分：如何添加足迹位置。" class="headerlink" title="第三部分：如何添加足迹位置。"></a>第三部分：如何添加足迹位置。</h2><pre><code class="html">    markers: [ // 足迹位置
+
+        // {latLng: [经度（保留两位小数）, 纬度（保留两位小数）], name: &#39;城市名称&#39;},
+        // 推荐查询经纬度网站：http://www.gpsspg.com/maps.htm
+
+        {latLng: [39.90, 116.41], name: &#39;北京&#39;},
+        {latLng: [31.24, 121.50], name: &#39;上海&#39;},
+
+        {latLng: [46.06, 122.06], name: &#39;内蒙古 - 乌兰浩特&#39;}
+    ]
+
+</code></pre>
+<p>推荐查询经纬度网站：<a href="http://www.gpsspg.com/maps.htm" target="_blank" rel="noopener">http://www.gpsspg.com/maps.htm</a></p>
+<p>语法：<code>{latLng: [经度（保留两位小数）, 纬度（保留两位小数）], name: &#39;城市名称&#39;},</code>。</p>
+<h2 id="如何嵌入式到博客中"><a href="#如何嵌入式到博客中" class="headerlink" title="如何嵌入式到博客中"></a>如何嵌入式到博客中</h2><pre><code class="html">&lt;iframe style=&quot;max-width: 100%&quot; 
+      frameborder=&quot;no&quot; 
+      border=&quot;0&quot; 
+      marginwidth=&quot;0&quot; 
+      marginheight=&quot;0&quot; 
+      width=&quot;100%&quot; 
+      height=&quot;750px&quot; 
+      src=&quot;替换成你的足迹地图链接&quot;&gt;                                        
+&lt;/iframe&gt;
+
+</code></pre>
+<p>把制作好的足迹地图文件放在服务器上，把访问连接放在 <code>src</code> 中。</p>
+<p>然后将上面的代码复制到你的博客页面上即可。</p>
+<p>可适配手机端和等比例缩放。</p>
+<h2 id="获取源码"><a href="#获取源码" class="headerlink" title="获取源码"></a>获取源码</h2><pre><code>git clone https://github.com/HelloWuJiaYi/jVectorMap-Footprint
+</code></pre><h2 id="问题反馈（感谢大家的问题反馈）"><a href="#问题反馈（感谢大家的问题反馈）" class="headerlink" title="问题反馈（感谢大家的问题反馈）"></a>问题反馈（感谢大家的问题反馈）</h2><ul>
+<li>部分服务器的编码问题导致显示文字乱码 | <a href="https://github.com/maxiaohong-m" target="_blank" rel="noopener">@xiaohong.m</a></li>
+</ul>
+<h2 id="广告时间"><a href="#广告时间" class="headerlink" title="广告时间"></a>广告时间</h2><p>欢迎访问我的个人博客:</p>
+<p><a href="http://www.wujiayi.vip" target="_blank" rel="noopener">http://www.wujiayi.vip</a></p>
+<p>我的微信公众号：</p>
+<p><code>吴佳轶同学</code></p>
 
       <!-- .entry-content -->
       
@@ -490,7 +536,7 @@ mail : love516@teckon.cn
     </article>
       <!-- #post-## -->
       <section class="author-profile">
-        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/love516/CDN-for-love516@v1.0.4/images/custom/love516.webp" itemprop="image" alt="小咩❤️小居" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
@@ -503,7 +549,7 @@ mail : love516@teckon.cn
         <p><i class="iconfont icon-write"></i>记录爱情 ❤️ 记录生活</p>
       </section>
   </div><!-- #primary -->
-</div>
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
