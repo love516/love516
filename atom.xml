@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-08-23T02:42:07.145Z</updated>
+  <updated>2019-10-09T07:32:04.000Z</updated>
   <id>/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>游山玩水系列——台湾</title>
+    <link href="/2019/10/09/hello-taiwan/"/>
+    <id>/2019/10/09/hello-taiwan/</id>
+    <published>2019-10-09T14:16:01.000Z</published>
+    <updated>2019-10-09T07:32:04.000Z</updated>
+    
+    <summary type="html">
+    
+      台湾是第二次和juejue出境游玩，咩咩以前来过，但是这次和juejue一起玩的很开心哟！
+    
+    </summary>
+    
+      <category term="旅行" scheme="/categories/%E6%97%85%E8%A1%8C/"/>
+    
+    
+      <category term="旅游" scheme="/tags/%E6%97%85%E6%B8%B8/"/>
+    
+      <category term="玩耍" scheme="/tags/%E7%8E%A9%E8%80%8D/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第一次旅游——乌镇</title>
     <link href="/2018/08/18/Hexo-Theme-Sakura/"/>
     <id>/2018/08/18/Hexo-Theme-Sakura/</id>
     <published>2018-08-18T14:16:01.000Z</published>
-    <updated>2019-08-23T02:42:07.145Z</updated>
+    <updated>2019-08-23T02:42:08.000Z</updated>
     
     <summary type="html">
     
@@ -43,7 +65,7 @@
     <link href="/2018/08/18/hello-world/"/>
     <id>/2018/08/18/hello-world/</id>
     <published>2018-08-18T14:16:01.000Z</published>
-    <updated>2019-08-23T04:25:48.855Z</updated>
+    <updated>2019-08-23T04:28:24.000Z</updated>
     
     <summary type="html">
     
